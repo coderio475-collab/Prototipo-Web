@@ -1,11 +1,11 @@
 <?php
-private $bd = "Prototipo-Web";
+
 class Conexion
 {
     private $host = "localhost";
     private $usuario = "root";
     private $password = "";
-    private $bd = "NOMBRE_DE_TU_BASE_DE_DATOS";
+    private $bd = "Prototipo-Web";
 
     public function conectar()
     {
