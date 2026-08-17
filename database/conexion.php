@@ -5,7 +5,7 @@ class Conexion
     private $host = "localhost";
     private $usuario = "root";
     private $password = "";
-    private $bd = "Prototipo-Web";
+    private $bd = "riocode";
 
     public function conectar()
     {
