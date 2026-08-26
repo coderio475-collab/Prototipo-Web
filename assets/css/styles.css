@@ -82,6 +82,12 @@
 .img-placeholder { background: var(--color-surface-2); border: 1px dashed var(--color-border); color: var(--color-text-muted); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .3rem; min-height: 110px; border-radius: var(--radius-md); font-size: .72rem; text-align: center; }
 .img-placeholder i { font-size: 1.4rem; color: var(--color-gold); }
 
+/* Botones principales del sitio */
+.btn-gold { background-color: var(--color-gold); color: var(--color-primary); border: 1px solid var(--color-gold); font-weight: 600; }
+.btn-gold:hover, .btn-gold:focus { background-color: var(--color-primary); color: var(--color-surface); border-color: var(--color-primary); }
+.btn-outline-gold { background-color: transparent; color: var(--color-gold-dark); border: 1px solid var(--color-gold); font-weight: 600; }
+.btn-outline-gold:hover, .btn-outline-gold:focus { background-color: var(--color-gold); color: var(--color-primary); border-color: var(--color-gold); }
+
 
 /* Footer */
 .main-footer { background: var(--color-primary); color: #e8e1d3; padding: 2.75rem 0 1.25rem; border-top: 3px solid var(--color-gold); margin-top: 2rem; }
