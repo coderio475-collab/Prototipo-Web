@@ -115,7 +115,6 @@
   .btn-gold, .btn-outline-gold { width: 100%; text-align: center; margin-bottom: .5rem; }
   .footer-social { justify-content: center; }
   .footer-brand { flex-direction: column; text-align: center; }
-  /* el buscador ocupa todo el ancho dentro del menú colapsado, sin desbordar */
   .navbar-search { width: 100%; margin: .5rem 0; }
   .navbar-search input { width: 100%; }
 }
