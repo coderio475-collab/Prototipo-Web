@@ -1,0 +1,28 @@
+/* Variables : tocar aca cambia colores/tipografias en todo el sitio */
+:root {
+  --color-primary:#241a10; --color-gold:#c69a3f; --color-gold-light:#e3c179; --color-gold-dark:#8f6f28; --color-green:#4b6b46;
+  --color-bg:#f7f3ea; --color-surface:#fff; --color-surface-2:#fbf8f1; --color-text:#241d15; --color-text-muted:#6f665a; --color-border:#e6dcc6;
+  --shadow-soft:0 4px 14px rgba(36,26,16,.08);
+  --font-display:"Fraunces",Georgia,serif; --font-body:"Inter","Segoe UI",sans-serif;
+  --radius-sm:4px; --radius-md:10px; --radius-lg:18px;
+} 
+
+/* Navbar estilo de la barra de navegación  */
+.navbar-custom { background-color: var(--color-primary); border-bottom: 3px solid var(--color-gold); }
+
+.navbar-brand { min-width: 0; }
+.brand-crest-img { width: 46px; height: 46px; object-fit: contain; flex-shrink: 0; }
+.brand-text { min-width: 0; }
+.brand-text h1 { color: #fff; font-size: 1.05rem; margin: 0; line-height: 1.25; }
+.brand-text .brand-sub { color: var(--color-gold-light); font-size: .72rem; display: block; }
+.navbar-custom .nav-link { color: #e8e1d3 !important; font-weight: 500; font-size: .92rem; padding: .6rem .9rem !important; border-radius: var(--radius-sm); }
+.navbar-custom .nav-link:hover, .navbar-custom .nav-link.active { color: var(--color-gold-light) !important; }
+.navbar-custom .nav-link.active { background-color: rgba(198,154,63,.16); }
+.navbar-custom .dropdown-menu { background: var(--color-primary); border: 1px solid rgba(198,154,63,.3); }
+.navbar-custom .dropdown-item { color: #e8e1d3; font-size: .9rem; }
+.navbar-custom .dropdown-item:hover, .navbar-custom .dropdown-item:focus { background: rgba(198,154,63,.16); color: var(--color-gold-light); }
+.navbar-toggler { border-color: rgba(198,154,63,.4) !important; }
+/* diseño del buscador de la web */
+.navbar-search { display: flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.08); border: 1px solid rgba(198,154,63,.35); border-radius: 20px; padding: .35rem .9rem; color: #cfc5b2; margin: .5rem 1rem .5rem 0; }
+.navbar-search input { background: none; border: none; color: #f2ece0; font-size: .85rem; outline: none; width: 140px; }
+.navbar-search input::placeholder { color: #a89d89; }
