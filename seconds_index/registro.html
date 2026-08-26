@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registro - Escuela Técnica N.º 1 Bella Unión</title>
+        <meta name="description" content="Formulario de registro para estudiantes y docentes de la Escuela Técnica N.º 1 de Bella Unión.">
+        <!-- Tipografías  para títulos, Inter para texto general -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Bootstrap 5.3 (grid + componentes) + Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+        <!-- Estilos del sitio -->
+        <link rel="stylesheet" href="../assets/css/styles.css">
+    </head>
+    <body>
+
+        <!-- NAVBAR barra de navegación y logo -->
+        <nav class="navbar navbar-expand-lg navbar-custom" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+            <img src="../assets/img/logo-utu-transparent.png" alt="Escudo Escuela Técnica N.º 1" class="brand-crest-img">
+            <span class="brand-text">
+                <h1>Escuela Técnica N.º 1</h1>
+                <span class="brand-sub">"Mtro. Téc. Sergio G. Olaizola" · Bella Unión</span>
+            </span>
+            </a>
+            
+            <!-- Botón para el menú en pantallas moviles,tablet (Bootstrap) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+            
+                <!-- buscador de la web -->
+            <div class="navbar-search">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="Buscar..." aria-label="Buscar">
+            </div>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Institución</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="noticias.html">Noticias</a></li>
+                    <li><a class="dropdown-item" href="contacto.html">Contacto</a></li>
+                </ul>
+                </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Estudiantes</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="cursos.html">Carreras</a></li>
+                    <li><a class="dropdown-item" href="horarios.html">Horarios</a></li>
+                </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="anexos.html">Anexos</a></li>
+                <li class="nav-item"><a class="nav-link active" href="registro.html">Registro</a></li>
+            </ul>
+            </div>
+        </div>
+        </nav>
+
+         <!-- Hero bloque principal -->
+        <section class="hero">
+        <div class="container hero-inner text-center">
+            <span class="hero-eyebrow justify-content-center">Sumate a la institución</span>
+            <h2 class="mx-auto">Formulario de registro</h2>
+            <p class="lead-text mx-auto">Completá el formulario correspondiente para registrarte como estudiante o como docente.</p>
+        </div>
+        </section>
+
+        <main class="container section-pad">
+
+  <!--Pestalas de form estudiante y el de docente -->
+  <ul class="nav nav-pills nav-pills-gold justify-content-center mb-4" id="registroTab" role="tablist">
+    <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#panel-estudiante" type="button" role="tab">Estudiante</button></li>
+    <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#panel-docente" type="button" role="tab">Docente</button></li>
+  </ul>
+
+  <div class="tab-content">
+
+    <!-- Formulario: Estudiante  -->
+    <div class="tab-pane fade show active" id="panel-estudiante" role="tabpanel">
+      <div class="form-shell">
+        <h3 class="h4 mb-1 text-gold">Registro de Estudiante</h3>
+        <p class="text-muted small mb-4">Completá tus datos para inscribirte en la institución.</p>
+        
+        <!-- Mensaje de exito -->
+        <div id="estudiante-success" class="success-message">¡Registro enviado! Nos pondremos en contacto para confirmar tu inscripción.</div>
+
+        <form data-demo-form="#estudiante-success">
+          <div class="row">
+            <div class="col-md-6 mb-3"><label for="est-name" class="form-label">Nombre completo *</label><input type="text" id="est-name" class="form-control" required></div>
+            <div class="col-md-6 mb-3"><label for="est-ci" class="form-label">Cédula de identidad *</label><input type="text" id="est-ci" class="form-control" required></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3"><label for="est-email" class="form-label">Correo electrónico *</label><input type="email" id="est-email" class="form-control" required></div>
+            <div class="col-md-6 mb-3"><label for="est-phone" class="form-label">Teléfono *</label><input type="tel" id="est-phone" class="form-control" required></div>
+          </div>
+          <div class="mb-3">
+            <label for="est-course" class="form-label">Curso al que desea inscribirse</label>
+            <select id="est-course" class="form-select">
+              <option>EBI · Educación Básica Integrada</option>
+              <option>FPB · Formación Profesional Básica</option>
+              <option>BT · Bachillerato Tecnológico</option>
+              <option>BTP · Bachillerato Técnico Profesional</option>
+              <option>CTT · Cursos Técnicos Terciarios</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-gold">Enviar registro</button>
+        </form>
+      </div>
+    </div>
+    <!--  Formulario Docente  -->
+    <div class="tab-pane fade" id="panel-docente" role="tabpanel">
+      <div class="form-shell">
+        <h3 class="h4 mb-1 text-gold">Registro de Docente</h3>
+        <p class="text-muted small mb-4">Completá tus datos para postularte como docente en la institución.</p>
+        <div id="docente-success" class="success-message">¡Postulación enviada! El equipo de Recursos Humanos se pondrá en contacto.</div>
+        <form data-demo-form="#docente-success">
+          <div class="row">
+            <div class="col-md-6 mb-3"><label for="doc-name" class="form-label">Nombre completo *</label><input type="text" id="doc-name" class="form-control" required></div>
+            <div class="col-md-6 mb-3"><label for="doc-title" class="form-label">Título / Especialidad *</label><input type="text" id="doc-title" class="form-control" required></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3"><label for="doc-email" class="form-label">Correo electrónico *</label><input type="email" id="doc-email" class="form-control" required></div>
+            <div class="col-md-6 mb-3"><label for="doc-phone" class="form-label">Teléfono *</label><input type="tel" id="doc-phone" class="form-control" required></div>
+          </div>
+          <div class="mb-3">
+            <label for="doc-area" class="form-label">Área de interés</label>
+            <select id="doc-area" class="form-select">
+              <option>Matemática</option>
+              <option>Idioma Español</option>
+              <option>Ciencias Físicas</option>
+              <option>Informática</option>
+              <option>Talleres y Oficios</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-gold">Enviar postulación</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+
+        
+    <!-- FOOTER -->
+    <footer class="main-footer">
+    <div class="container">
+        <div class="footer-brand">
+        <img src="../assets/img/logo-utu-transparent.png" alt="Escudo Escuela Técnica N.º 1" class="brand-crest-img">
+        <div><h2>Escuela Técnica N.º 1</h2><span class="brand-sub">"Mtro. Téc. Sergio G. Olaizola" · Bella Unión</span></div>
+        </div>
+        <div class="row g-4">
+        <div class="col-md-4">
+            <h3>Contacto Sede</h3>
+            <p><i class="bi bi-geo-alt me-1"></i> Pedro Acosta y Avenida Artigas, Bella Unión</p>
+            <p><i class="bi bi-telephone me-1"></i> 4779 2025</p>
+            <p><i class="bi bi-envelope me-1"></i> info@utu.edu.uy</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Atención al Estudiante</h3>
+            <p><i class="bi bi-clock me-1"></i> Lunes a Viernes de 08:00 a 20:00 hs</p>
+            <p><i class="bi bi-envelope me-1"></i> secretaria@utu.edu.uy</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Seguinos en nuestras redes</h3>
+            <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+        </div>
+        </div>
+        <div class="footer-bottom"><p class="mb-0">&copy; 2026 Escuela Técnica N.º 1 "Mtro. Téc. Sergio G. Olaizola" — Bella Unión. Todos los derechos reservados.</p></div>
+    </div>
+    </footer>
+
+    <!-- Bootstrap (menú , dropdowns, pestañas) + script  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+</html>
