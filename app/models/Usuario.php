@@ -32,12 +32,12 @@ class Usuario
             ":tipo" => $datos["tipo"],
             ":nombre" => $datos["nombre"],
             ":apellido" => $datos["apellido"],
-            ":cedula" => $datos["cedula"],
+            ":cedula" => trim($datos["cedula"]) !== "" ? trim($datos["cedula"]) : null,
             ":correo" => $datos["correo"],
             ":telefono" => $datos["telefono"],
-            ":curso" => $datos["curso"],
-            ":titulo" => $datos["titulo"],
-            ":area" => $datos["area"]
+            ":curso" => trim($datos["curso"]) !== "" ? trim($datos["curso"]) : null,
+            ":titulo" => trim($datos["titulo"]) !== "" ? trim($datos["titulo"]) : null,
+            ":area" => trim($datos["area"]) !== "" ? trim($datos["area"]) : null
         ]);
     }
 }

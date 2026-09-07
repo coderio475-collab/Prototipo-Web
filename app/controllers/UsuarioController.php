@@ -22,9 +22,10 @@ class UsuarioController
             throw new InvalidArgumentException("El tipo de registro no es válido.");
         }
 
-        $camposObligatorios = ["tipo", "nombre", "apellido", "cedula", "correo", "telefono"];
+        $camposObligatorios = ["tipo", "nombre", "apellido", "correo", "telefono"];
 
         if ($datos["tipo"] === "estudiante") {
+            $camposObligatorios[] = "cedula";
             $camposObligatorios[] = "curso";
         } else {
             $camposObligatorios[] = "titulo";

@@ -2,7 +2,7 @@
 
 class Conexion
 {
-    private $host = "localhost";
+    private $host = "localhost:3306";
     private $usuario = "root";
     private $password = "";
     private $bd = "riocode";
