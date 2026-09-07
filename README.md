@@ -9,15 +9,17 @@ Prototipo del sitio web institucional de la escuela, enfocado en la página de *
 - [Bootstrap 5.3](https://getbootstrap.com/) (grid y componentes, vía CDN)
 - [Bootstrap Icons](https://icons.getbootstrap.com/)(CDN)
 - Google Fonts: **Fraunces** (títulos) e **Inter** (texto general)
-- JavaScript simulacion Registro(`assets/js/main.js`)
+- JavaScript para eventos visuales del registro (`assets/js/main.js`)
+- PHP + MySQL para guardar usuarios (`app/` y `database/`)
 
 
 ## ▶️ Cómo verlo
 
-No requiere instalación ni servidor: es HTML/CSS/JS
+El registro requiere un servidor PHP con MySQL y la base de datos `riocode` configurada en `database/conexion.php`.
 
 1. Descargar o clonar la carpeta.
-2. Abrir mediante navegador el `index.html` o importar la carpeta y abrir mediante la extensión "Live Server" de VS Code.
+2. Iniciar el servidor PHP apuntando a la carpeta del proyecto.
+3. Abrir `seconds_index/registro.html` desde ese servidor.
 
 > Requiere conexión a internet la primera vez, ya que Bootstrap y las
 > tipografías se cargan desde un CDN(Red de Distribución de Contenidos).
