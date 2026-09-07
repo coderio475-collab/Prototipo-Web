@@ -18,4 +18,26 @@ class Usuario
 
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function guardar($datos)
+    {
+        $datos["nombre"] = mb_convert_case(trim($datos["nombre"]), MB_CASE_TITLE, "UTF-8");
+        $datos["apellido"] = mb_convert_case(trim($datos["apellido"]), MB_CASE_TITLE, "UTF-8");
+
+        $sql = "INSERT INTO usuarios
+            (Tipo, Nombre, Apellido, Cedula, Correo, Telefono, Curso, Titulo, Area)
+            VALUES (:tipo, :nombre, :apellido, :cedula, :correo, :telefono, :curso, :titulo, :area)";
+        $consulta = $this->conexion->prepare($sql);
+        $consulta->execute([
+            ":tipo" => $datos["tipo"],
+            ":nombre" => $datos["nombre"],
+            ":apellido" => $datos["apellido"],
+            ":cedula" => $datos["cedula"],
+            ":correo" => $datos["correo"],
+            ":telefono" => $datos["telefono"],
+            ":curso" => $datos["curso"],
+            ":titulo" => $datos["titulo"],
+            ":area" => $datos["area"]
+        ]);
+    }
 }

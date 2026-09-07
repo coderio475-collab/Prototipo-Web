@@ -1,21 +1,38 @@
 document.addEventListener('DOMContentLoaded', function () {
-  //Busca todos los formularios (los del panel de Registro)
-  var forms = document.querySelectorAll('form[data-demo-form]');
+  var formularios = document.querySelectorAll('form[data-demo-form]');
+  var parametros = new URLSearchParams(window.location.search);
+  var resultado = parametros.get('registro');
+  var tipo = parametros.get('tipo') || 'estudiante';
 
-  forms.forEach(function (form) {
-    form.addEventListener('submit', function (event) {
-      //Evita el envío
-      event.preventDefault();
+  formularios.forEach(function (formulario) {
+    formulario.addEventListener('input', function (event) {
+      event.target.setCustomValidity('');
+    });
 
-      //Muestra el cartel de éxito asociado a este formulario
-      var successBox = document.querySelector(form.dataset.demoForm);
-      if (successBox) {
-        successBox.classList.add('show');
+    formulario.addEventListener('submit', function (event) {
+      var campos = formulario.querySelectorAll('input:not([type="hidden"]), select, textarea');
+
+      for (var indice = 0; indice < campos.length; indice += 1) {
+        var campo = campos[indice];
+
+        if (campo.value.trim() === '') {
+          event.preventDefault();
+          campo.setCustomValidity('Este campo no puede estar vacío.');
+          campo.reportValidity();
+          return;
+        }
       }
-
-    
-      //Limpia para dejar el formulario listo de nuevo
-      form.reset();
     });
   });
+
+  if (resultado === 'ok') {
+    var successBox = document.querySelector('#' + tipo + '-success');
+    if (successBox) {
+      successBox.classList.add('show');
+    }
+  }
+
+  if (resultado === 'error') {
+    window.alert('No se pudo guardar el registro. Verificá los datos e intentá nuevamente.');
+  }
 });
