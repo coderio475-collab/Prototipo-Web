@@ -1,27 +1,16 @@
 <?php
 
-class Conexion
-{
-    private $host = "localhost:3306";
-    private $usuario = "root";
-    private $password = "";
-    private $bd = "riocode";
+$server = "localhost";
+$username = "root";
+$password = "";
+$database = "riocode";
 
-    public function conectar()
-    {
-        try {
-            $conexion = new PDO(
-                "mysql:host=" . $this->host . ";dbname=" . $this->bd . ";charset=utf8",
-                $this->usuario,
-                $this->password
-            );
+$conexion = new mysqli($server, $username, $password, $database);
 
-            $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            return $conexion;
-
-        } catch (PDOException $e) {
-            die("Error de conexión: " . $e->getMessage());
-        }
-    }
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
 }
+
+echo "Conexión exitosa";
+
+?>
